@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#350b15">
+  <title>Karibasava & Vandana | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    html{min-height:100%;scroll-behavior:smooth;overflow-x:hidden}
+    body{margin:0;min-height:100%;overflow-x:hidden;overflow-y:auto;touch-action:pan-y;-webkit-overflow-scrolling:touch;background:#f5eee3;color:#4b2630;font-family:Montserrat,Arial,sans-serif}
+    .intro-screen{min-height:100vh;min-height:100svh;position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at center,#77313d,#4b101b 55%,#21060d);color:#f7e8c8;transition:opacity .7s ease,visibility .7s ease}
+    .intro-screen:before{content:"";position:absolute;inset:14px;border:1px solid #d7b76e;pointer-events:none}
+    .intro-screen:after{content:"";position:absolute;inset:22px;border:1px solid #d7b76e55;pointer-events:none}
+    .intro-screen.hide{opacity:0;visibility:hidden;pointer-events:none}
+    .intro-border{z-index:1;width:min(100%,520px);min-height:min(720px,88svh);padding:38px 20px;border:1px solid #d7b76e88;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#ffffff08;box-shadow:0 20px 80px #0005}
+    .crown{font-size:54px;color:#e8c77b;margin-bottom:18px}
+    .kicker,.foot{font-size:9px;letter-spacing:3px;color:#e5c98e}
+    .intro-border h1{font:500 clamp(54px,13vw,82px) 'Cormorant Garamond',serif;letter-spacing:7px;margin:12px 0;color:#f8e8c3}
+    .divider{display:flex;align-items:center;gap:12px;width:70%;color:#d8b76b;margin:12px}
+    .divider:before,.divider:after{content:"";height:1px;background:#d8b76b;flex:1}
+    .subtitle{font-size:12px;letter-spacing:5px;margin:12px 0 26px}
+    .intro-couple{font:clamp(40px,9vw,55px) 'Great Vibes',cursive;color:#f2d796;margin:0}
+    .intro-couple span{font-size:28px;color:#d8b76b}
+    .intro-date{font-size:11px;letter-spacing:4px;margin:18px 0 35px}
+    .enter,.gold{display:inline-block;text-decoration:none;text-align:center;padding:15px 25px;border-radius:40px;border:1px solid #f9e7b8;background:linear-gradient(135deg,#f4dda0,#c89a48);color:#45121d;font-size:11px;font-weight:700;letter-spacing:1px;box-shadow:0 7px 18px #0002;cursor:pointer}
+    .foot{margin-top:38px}
+    .spark{position:absolute;color:#e7c77e}.s1{top:17%;left:12%;font-size:28px}.s2{right:13%;bottom:18%;font-size:25px}
+    #invitationPage{display:none;width:100%;max-width:760px;margin:0 auto;background:#fbf7ef;overflow:visible;box-shadow:0 0 45px #4b101b12}
+    #invitationPage.show{display:block;animation:pageIn .65s ease}
+    @keyframes pageIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    .topbar{background:#350b15;color:#e9d7b4;padding:13px 18px;display:flex;justify-content:space-between;align-items:center;font-size:9px;letter-spacing:1.5px}
+    .topbar button{background:none;border:0;color:#f0d99e;font:inherit;cursor:pointer}
+    .hero{min-height:850px;padding:55px 22px;text-align:center;color:#f8e9c9;background:linear-gradient(#2c0912df,#4b101be8),url('./background.jpg') center/cover;display:flex;align-items:center;flex-direction:column;justify-content:center;position:relative}
+    .hero:before{content:"";position:absolute;inset:16px;border:1px solid #d5b36c88;pointer-events:none}
+    .eyebrow{font-size:10px;letter-spacing:3px;color:#b28a4e;font-weight:600}
+    .hero .eyebrow{color:#e8cb8a}
+    .om{font-size:45px;color:#e6c77e;margin:12px}
+    .scriptline{font:22px 'Cormorant Garamond',serif}
+    .hero h2{font:500 clamp(40px,8vw,60px) 'Cormorant Garamond',serif;color:#f4d99a;margin:12px}
+    .photo{width:min(78%,340px);height:330px;padding:7px;border:1px solid #d7b76e;border-radius:180px 180px 12px 12px;overflow:hidden;margin:22px;background:#7d4b46}
+    .photo img{width:100%;height:100%;object-fit:cover;border-radius:180px 180px 8px 8px;display:block}
+    .names{font:clamp(38px,8vw,55px) 'Great Vibes',cursive;color:#f7e3b7;line-height:1.15}
+    .names i{font-style:normal;color:#d8b76b}
+    .date-line{font-size:11px;letter-spacing:2px;margin:22px}
+    .section{padding:58px 22px;text-align:center}
+    .section h2{font:500 clamp(34px,7vw,45px) 'Cormorant Garamond',serif;color:#632b35;margin:12px 0 20px}
+    .section p{font-size:13px;line-height:1.9;color:#806a62}
+    .family,.gallery-section{background:#f1e7d8}
+    .card{max-width:490px;margin:15px auto;padding:26px 18px;border:1px solid #d9c49d;background:#fffaf1;box-shadow:0 8px 24px #4b101b0a}
+    .card small{font-size:9px;letter-spacing:2px;color:#a47b42;font-weight:bold}
+    .card h3{font:600 29px 'Cormorant Garamond',serif;color:#682c38;margin:12px}
+    .featured{background:#4b101b;border-color:#b68a43}
+    .featured h3,.featured p,.featured strong{color:#f4d99a!important}
+    .countdown{background:#4b101b}
+    .countdown h2{color:#f4d99a!important}
+    .timer{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:480px;margin:25px auto}
+    .timer div{padding:16px 4px;border:1px solid #d0ad6980}
+    .timer b{display:block;font:32px 'Cormorant Garamond',serif;color:#f5d994}
+    .timer small{color:#e7d4b2;font-size:9px}
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:540px;margin:20px auto}
+    .gallery img{width:100%;height:190px;object-fit:cover;border:5px solid #fffaf1;background:#e7d8c5}
+    .footer{background:#350b15;color:#e8d5ae;text-align:center;padding:35px 15px}
+    .footer-names{font:40px 'Great Vibes',cursive;color:#f4d99a}
+    .footer p{font-size:9px;letter-spacing:2px}
+    .footer a{color:#f0d99e}
+    @media(max-width:420px){.intro-border{min-height:0;padding:30px 16px}.crown{font-size:42px}.foot{margin-top:28px}.hero{min-height:760px}.photo{height:285px}.section{padding:48px 18px}.gallery img{height:155px}.timer{gap:5px}.timer b{font-size:26px}}
+  </style>
+</head>
+<body>
+  <!-- FIRST SCREEN: TAP TO ENTER -->
+  <main class="intro-screen" id="introScreen">
+    <div class="intro-border">
+      <div class="crown">♛</div>
+      <p class="kicker">A ROYAL CELEBRATION OF LOVE</p>
+      <h1>WEDDING</h1>
+      <div class="divider"><span>✦</span></div>
+      <p class="subtitle">YOU ARE INVITED</p>
+      <p class="intro-couple">Karibasava <span>&</span> Vandana</p>
+      <p class="intro-date">15 · 11 · 2026</p>
+      <button class="enter" id="enterButton" type="button">✧ &nbsp; TAP TO ENTER &nbsp; ✧</button>
+      <p class="foot">WITH THE BLESSINGS OF OUR FAMILIES</p>
+    </div>
+    <span class="spark s1">✧</span><span class="spark s2">✦</span>
+  </main>
+
+  <!-- SECOND SCREEN: WEDDING DETAILS -->
+  <main id="invitationPage">
+    <div class="topbar">
+      <button type="button" id="backButton">← WELCOME</button>
+      <span>WEDDING INVITATION</span>
+    </div>
+
+    <section class="hero">
+      <p class="eyebrow">WITH THE BLESSINGS OF OUR FAMILIES</p>
+      <div class="om">ॐ</div>
+      <p class="scriptline">Together with our families,</p>
+      <h2>Wedding Invitation</h2>
+      <p class="scriptline">request the pleasure of your gracious presence</p>
+      <div class="photo"><img src="./couple.jpg" alt="Karibasava and Vandana"></div>
+      <div class="names">Karibasava Reddy S<br><i>&</i><br>Dr Vandana K</div>
+      <p class="date-line">SUNDAY · 15 NOVEMBER 2026</p>
+      <a class="gold" href="#events">VIEW WEDDING DETAILS ↓</a>
+    </section>
+
+    <section class="section">
+      <p class="eyebrow">A NEW BEGINNING</p>
+      <h2>Two hearts, one beautiful journey</h2>
+      <p>With immense joy and the blessings of our elders, we invite you to join us as we celebrate the beginning of our married life. Your presence and blessings will make our special day memorable.</p>
+    </section>
+
+    <section class="section family">
+      <p class="eyebrow">WITH THE BLESSINGS OF</p>
+      <h2>Our Families</h2>
+      <div class="card">
+        <small>GROOM'S FAMILY</small>
+        <h3>Karibasava Reddy S</h3>
+        <p>Mother: Smt. Sangsi Ananthamma</p>
+        <p>Father: Sri Sangsi Thimma Reddy</p>
+      </div>
+      <div class="card">
+        <small>BRIDE</small>
+        <h3>Dr Vandana K</h3>
+      </div>
+    </section>
+
+    <section class="section" id="events">
+      <p class="eyebrow">CELEBRATE WITH US</p>
+      <h2>Wedding Celebrations</h2>
+      <div class="card">
+        <small>THE EVENING BEFORE</small>
+        <h3>Reception</h3>
+        <p>Saturday, 14 November 2026</p>
+      </div>
+      <div class="card featured">
+        <small>THE WEDDING CEREMONY</small>
+        <h3>Muhurtham</h3>
+        <p>Sunday, 15 November 2026</p>
+        <strong>9:27 AM – 10:55 AM</strong>
+      </div>
+    </section>
+
+    <section class="section countdown">
+      <p class="eyebrow">THE CELEBRATION BEGINS IN</p>
+      <h2>Counting Every Moment</h2>
+      <div class="timer" id="timer">
+        <div><b id="days">--</b><small>Days</small></div>
+        <div><b id="hours">--</b><small>Hours</small></div>
+        <div><b id="minutes">--</b><small>Minutes</small></div>
+        <div><b id="seconds">--</b><small>Seconds</small></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="eyebrow">JOIN US AT</p>
+      <h2>Wedding Venue</h2>
+      <div class="card">
+        <h3>JDR Function Hall</h3>
+        <p>Kolagallu Road, Ballari</p>
+        <a class="gold" href="https://maps.app.goo.gl/g4sGPi2GpBUTfxoPA?g_st=aw" target="_blank" rel="noopener">OPEN LIVE LOCATION ↗</a>
+      </div>
+    </section>
+
+    <section class="section gallery-section">
+      <p class="eyebrow">A FEW BEAUTIFUL MOMENTS</p>
+      <h2>Photo Gallery</h2>
+      <div class="gallery">
+        <img src="./groom.jpg" alt="Groom">
+        <img src="./bride.jpg" alt="Bride">
+        <img src="./gallery-1.jpg" alt="Wedding gallery photo 1">
+        <img src="./gallery-2.jpg" alt="Wedding gallery photo 2">
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="eyebrow">YOUR PRESENCE IS OUR PRESENT</p>
+      <h2>Will You Join Us?</h2>
+      <p>We look forward to celebrating with you!</p>
+      <a class="gold" href="https://wa.me/919535874134?text=Namaskara%2C%20I%20will%20attend%20the%20wedding%20of%20Karibasava%20Reddy%20S%20and%20Dr%20Vandana%20K." target="_blank" rel="noopener">CONFIRM ON WHATSAPP</a>
+      <p>For details: <a href="tel:+919535874134">95358 74134</a></p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-names">Karibasava & Vandana</div>
+      <p>WITH LOVE AND BEST WISHES</p>
+      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">BACK TO TOP ↑</a>
+    </footer>
+  </main>
+
+  <script>
+    // Show the wedding details page when the visitor taps TAP TO ENTER.
+    const introScreen = document.getElementById('introScreen');
+    const invitationPage = document.getElementById('invitationPage');
+
+    document.getElementById('enterButton').addEventListener('click', function () {
+      introScreen.classList.add('hide');
+      invitationPage.classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      setTimeout(() => { introScreen.style.display = 'none'; }, 750);
+    });
+
+    // Back button returns to the welcome screen.
+    document.getElementById('backButton').addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      introScreen.style.display = 'flex';
+      requestAnimationFrame(() => introScreen.classList.remove('hide'));
+      invitationPage.classList.remove('show');
+    });
+
+    // Muhurtam countdown: 15 November 2026, 9:27 AM India time.
+    const weddingDate = new Date('2026-11-15T09:27:00+05:30').getTime();
+    function updateCountdown() {
+      const distance = weddingDate - Date.now();
+      const timer = document.getElementById('timer');
+      if (distance <= 0) {
+        timer.innerHTML = '<p style="grid-column:1/-1;color:#f4d99a">The beautiful day is here! Best wishes!</p>';
+        return;
+      }
+      const values = {
+        days: Math.floor(distance / 86400000),
+        hours: Math.floor((distance % 86400000) / 3600000),
+        minutes: Math.floor((distance % 3600000) / 60000),
+        seconds: Math.floor((distance % 60000) / 1000)
+      };
+      for (const [id, value] of Object.entries(values)) {
+        document.getElementById(id).textContent = String(value).padStart(2, '0');
+      }
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
