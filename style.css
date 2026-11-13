@@ -1,0 +1,58 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f5eee3;color:#4b2630;font-family:Montserrat,Arial,sans-serif}.invitation{width:min(100%,760px);margin:auto;background:#fbf7ef;overflow:hidden;box-shadow:0 0 45px #4b101b12;position:relative}.hero{min-height:850px;padding:54px 24px 48px;text-align:center;color:#f8e9c9;background:linear-gradient(180deg,#2c0912dd,#4b101bdc),url('images/background.jpg') center/cover;position:relative;display:flex;align-items:center;flex-direction:column;justify-content:center}.hero:before,.hero:after{content:"";position:absolute;inset:16px;border:1px solid #d5b36c88;pointer-events:none}.hero:after{inset:23px;border-color:#d5b36c44}.ornament{color:#d9b86e;font-size:25px;letter-spacing:8px}.eyebrow{font-size:10px;letter-spacing:3px;font-weight:600;color:#b28a4e;margin:0 0 16px}.hero .eyebrow{color:#e8cb8a;margin-top:20px}.ganesha{font-family:serif;font-size:42px;color:#e6c77e;margin:10px 0}.invite-line{font-family:'Cormorant Garamond',serif;font-size:21px;margin:8px 0;color:#f4e6cc}.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,8vw,58px);font-weight:500;margin:8px 0 12px;color:#f4d99a}.couple-photo{width:min(78%,340px);height:330px;margin:22px auto 18px;padding:7px;border:1px solid #d7b76e;border-radius:180px 180px 12px 12px;background:#f1d99d22;overflow:hidden}.couple-photo img{width:100%;height:100%;object-fit:cover;border-radius:180px 180px 8px 8px}.names{display:flex;flex-direction:column;gap:3px;font-family:'Great Vibes',cursive;font-size:clamp(39px,9vw,58px);line-height:1.1;color:#f7e3b7}.names i{font-size:28px;color:#d8b76b;font-style:normal}.date-line{font-size:11px;letter-spacing:2px;margin:22px 0;color:#f3dfb5}.date-line b{color:#d8b76b}.gold-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,#f4dda0,#c89a48);color:#45121d;text-decoration:none;padding:14px 25px;border-radius:40px;font-size:11px;font-weight:700;letter-spacing:1px;box-shadow:0 7px 18px #0002;border:1px solid #f9e7b8}.bottom-ornament{margin-top:35px}.section{padding:65px 28px;text-align:center}.section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,7vw,45px);font-weight:500;color:#632b35;margin:0 0 20px}.body-copy{max-width:530px;margin:0 auto;color:#806a62;font-size:13px;line-height:1.9}.divider{color:#bd9656;margin-top:26px}.family{background:#f1e7d8}.family-card,.event-card,.venue-card{max-width:490px;margin:15px auto;padding:27px 20px;border:1px solid #d9c49d;background:#fffaf1;box-shadow:0 8px 24px #4b101b0a}.small-label{font-size:9px;letter-spacing:2px;color:#a47b42;font-weight:700}.family-card h3,.event-card h3,.venue-card h3{font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:600;color:#682c38;margin:10px 0}.family-card p:not(.small-label){font-size:12px;color:#78645c;line-height:1.8;margin:5px}.bride-card{background:#fbf4e8}.event-card{position:relative}.event-icon,.pin{font-size:30px;color:#b68a43}.event-date{font-size:12px;color:#78645c}.time{font-size:17px;font-weight:700;color:#8b622b}.featured{background:#4b101b;color:#f7e8c8;border-color:#b68a43}.featured h3{color:#f4d99a}.featured .event-date,.featured .small-label{color:#e0c58e}.countdown-section{background:#4b101b;color:#f8e9c9}.countdown-section h2{color:#f4d99a}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:480px;margin:28px auto 0}.countdown div{padding:17px 5px;border:1px solid #d0ad6980;background:#ffffff0b}.countdown strong{display:block;font-family:'Cormorant Garamond',serif;font-size:32px;color:#f5d994}.countdown span{font-size:9px;letter-spacing:1px;color:#e7d4b2}.venue-card{padding:35px 18px}.venue-card .gold-button{margin-top:15px}.gallery{background:#f1e7d8}.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:25px auto 0;max-width:520px}.gallery-grid img{width:100%;height:210px;object-fit:cover;border:5px solid #fffaf1;box-shadow:0 4px 15px #4b101b18}.rsvp{background:#fbf7ef}.rsvp .gold-button{margin-top:22px}.contact{font-size:12px;color:#806a62;margin-top:22px}.contact a{color:#7b3a42;font-weight:700}footer{text-align:center;padding:35px 20px 28px;background:#350b15;color:#e8d5ae}footer .footer-names{font-family:'Great Vibes',cursive;font-size:40px;margin:12px 0}footer .footer-names span{color:#d4ad62}footer p:not(.footer-names){font-size:9px;letter-spacing:2px;color:#d9c397}.copyright{opacity:.7;margin-top:20px}.top-flower{display:none}@media(min-width:700px){.top-flower{display:block;position:absolute;color:#b88e4b;font-size:48px;z-index:2;top:18px}.flower-left{left:calc(50% - 340px)}.flower-right{right:calc(50% - 340px)}}@media(max-width:420px){.hero{min-height:760px;padding:42px 20px}.couple-photo{height:285px}.section{padding:53px 20px}.gallery-grid img{height:160px}.countdown{gap:5px}.countdown strong{font-size:27px}.countdown span{font-size:8px}}
+/* Royal opening screen inspired by the supplied reference */
+body.locked{overflow:hidden}
+.welcome-screen{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;background:
+ radial-gradient(ellipse at 50% 35%,#7d3440 0%,#4b101b 48%,#21060d 100%);color:#f7e8c8;transition:opacity .9s ease,visibility .9s ease}
+.welcome-screen:before{content:"";position:absolute;inset:14px;border:1px solid #d7b76e;pointer-events:none}
+.welcome-screen:after{content:"";position:absolute;inset:22px;border:1px solid #d7b76e55;pointer-events:none}
+.welcome-screen.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.welcome-frame{position:relative;z-index:1;width:min(100%,520px);min-height:min(720px,88vh);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:42px 22px;border:1px solid #d7b76e88;background:linear-gradient(180deg,#ffffff08,#00000012);box-shadow:inset 0 0 55px #d4ad6210,0 20px 80px #0005}
+.welcome-crown{font-size:56px;color:#e8c77b;margin-bottom:20px;text-shadow:0 0 24px #d9b86b55}
+.welcome-kicker{font-size:9px;letter-spacing:3px;color:#e5c98e;margin:0 0 15px}
+.welcome-title{font-family:'Cormorant Garamond',serif;font-size:clamp(54px,13vw,82px);font-weight:500;letter-spacing:7px;color:#f8e8c3;margin:0;text-shadow:0 5px 25px #0006}
+.welcome-rule{display:flex;align-items:center;gap:12px;width:70%;margin:18px 0;color:#d8b76b}
+.welcome-rule:before,.welcome-rule:after{content:"";height:1px;background:#d8b76b;flex:1}
+.welcome-subtitle{font-size:12px;letter-spacing:5px;color:#e9d7b4;margin:0 0 30px}
+.welcome-couple{font-family:'Great Vibes',cursive;font-size:clamp(38px,9vw,54px);color:#f2d796;margin:0 0 12px}
+.welcome-couple i{font-style:normal;font-size:28px;color:#d8b76b}
+.welcome-date{font-size:11px;letter-spacing:4px;color:#e9d7b4;margin:0 0 38px}
+.enter-button{border:1px solid #f7dfa1;border-radius:40px;padding:16px 28px;background:linear-gradient(135deg,#f5dfa4,#c39443);color:#45121d;font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:11px;letter-spacing:1.5px;cursor:pointer;box-shadow:0 8px 25px #0005;transition:transform .2s,box-shadow .2s}
+.enter-button:active{transform:scale(.97)}
+.welcome-foot{font-size:8px;letter-spacing:2px;color:#d7bd8c;margin:42px 0 0}
+.welcome-sparkle{position:absolute;color:#e7c77e;font-size:28px;opacity:.75}
+.sparkle-one{top:16%;left:12%}.sparkle-two{right:13%;bottom:18%}
+@media(max-height:650px){.welcome-frame{min-height:0;padding:24px 18px}.welcome-crown{font-size:38px;margin-bottom:10px}.welcome-subtitle{margin-bottom:18px}.welcome-date{margin-bottom:22px}.welcome-foot{margin-top:24px}}
+
+
+/* MOBILE SCROLL FIX */
+html {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+body {
+  min-height: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+body.locked {
+  overflow: hidden;
+}
+.invitation {
+  height: auto;
+  min-height: 100vh;
+  overflow: visible;
+}
+.section, .hero, footer {
+  position: relative;
+}
+.welcome-screen {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
